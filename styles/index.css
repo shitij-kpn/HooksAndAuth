@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.min-h-80 {
+  min-height: 80vh;
+}
+
+.caret-color {
+  caret-color: rgb(0, 4, 255);
+}
