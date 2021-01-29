@@ -1,9 +1,5 @@
-import React, { createContext, ReactChild, useContext, useMemo, useReducer } from 'react';
+import React, { createContext, Dispatch, ReactChild, useContext, useReducer } from 'react';
 
-interface Action{
-  type:string;
-  payload:Item;
-}
 
 interface Item{
   id:number;
@@ -15,6 +11,7 @@ interface props{
   children:ReactChild;
 }
 
+type Action = {type:'FormSubmit',payload:Item} | {type:"RemoveTodo",payload:string}
 
 const Reducer = (state:Item[],action:Action):Item[] => {
   switch(action.type){
@@ -38,13 +35,12 @@ const Reducer = (state:Item[],action:Action):Item[] => {
   }
 }
 
+let initialState:Item[] = [];
 
-//@ts-expect-error
-export const TodoContext = createContext();
+export const TodoContext = createContext<[Item[],Dispatch<Action>]>([initialState,() => null]);
 
 export const TodoProvider = ({ children }:props) => {
 
-  let initialState:Item[] = [];
   try {
     const todoItems = localStorage.getItem('todo');
     initialState = todoItems!= null ? JSON.parse(todoItems) : [];
@@ -54,11 +50,8 @@ export const TodoProvider = ({ children }:props) => {
 
   const [store,dispatch] = useReducer(Reducer,initialState);
 
-  const contextValue = useMemo(()=>{
-    return [store,dispatch];
-  },[store,dispatch]);
   return (
-    <TodoContext.Provider value={contextValue}>
+    <TodoContext.Provider value={[store,dispatch]}>
       {children}
     </TodoContext.Provider>
   )

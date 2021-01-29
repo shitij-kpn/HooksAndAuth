@@ -1,5 +1,5 @@
 import useTodoContext from "context/useTodoContext"
-import {  useState } from "react";
+import {  ChangeEvent, useState } from "react";
 
 export default function InputNewTask(){
     
@@ -11,7 +11,7 @@ export default function InputNewTask(){
         description:''
     });
 
-    const handleChange = (event) => {
+    const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
         const name = event.target.name;
         const value = event.target.value;
         setTodo(todo => {
