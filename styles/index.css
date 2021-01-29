@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.min-h-80 {
-  min-height: 80vh;
+.min-h-62 {
+  min-height: 62vh;
 }
 
 .caret-color {
