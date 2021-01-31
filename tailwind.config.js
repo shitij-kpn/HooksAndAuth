@@ -2,7 +2,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: "class",
+  darkMode: "media",
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,

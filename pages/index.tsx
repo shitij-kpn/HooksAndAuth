@@ -24,7 +24,7 @@ export default function Home(){
         <>
         <Header/>
         <InputNewTask/>
-        <main className="flex flex-wrap min-h-62">
+        <main className="flex flex-wrap min-h-62 dark:bg-gray-800 dark:text-gray-100">
             {Todo ? 
                 Todo.map((todo:Item) => <ListItem key={todo.id} title={todo.title} description={todo.description}/>)
                 : "Loading"

@@ -35,9 +35,9 @@ export default function InputNewTask(){
 
     return(
         <>
-            <div className="p-2 m-4 bg-fuchsia-400">
+            <div className="p-2 bg-fuchsia-400 dark:bg-gray-700 dark:text-gray-100">
                 <input 
-                    className="p-2 m-2 rounded caret-color focus:ring-2 focus:ring-fuchsia-50" 
+                    className="p-2 m-2 rounded caret-color focus:ring-2 focus:ring-fuchsia-50 dark:text-black" 
                     type="text" 
                     placeholder="title"
                     name="title"
@@ -45,7 +45,7 @@ export default function InputNewTask(){
                     onChange={(e) => handleChange(e)}
                 />
                 <input 
-                    className="p-2 m-2 rounded caret-color focus:ring-2 focus:ring-fuchsia-50" 
+                    className="p-2 m-2 rounded caret-color focus:ring-2 focus:ring-fuchsia-50 dark:text-black" 
                     type="text"
                     name="description" 
                     placeholder="Description"
@@ -53,7 +53,7 @@ export default function InputNewTask(){
                     onChange={(e) => handleChange(e)}
                 />
                 <button 
-                    className=" border-4 p-2 border-white rounded-xl hover:bg-white text-gray-700 focus:-translate-y-2"
+                    className=" border-4 p-2 border-white rounded-xl dark:text-gray-100 dark:hover:text-gray-900 hover:bg-white text-gray-700 focus:-translate-y-2"
                     onClick={() => handleSubmit()}
                 >
                     Add new Task!!

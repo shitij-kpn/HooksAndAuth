@@ -3,7 +3,7 @@ export default function Footer(){
     const year = date.getFullYear();
     
     return(
-        <footer className="bg-gray-700 text-base flex items-center justify-center text-white p-4">
+        <footer className="bg-gray-800 text-base flex items-center justify-center text-white p-4">
             &copy; Shitij Talan {year}
         </footer>
     )
